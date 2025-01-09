@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret - Card</title>
+  <style>
+    body {
+      font-family:'lauren';
+      text-align: center;
+      background-color: #f3ff74;
+      padding: 20px;
+    }
+    #card, #wrong-password {
+      display: none;
+    }
+    .card {
+      background: #a070ff;
+      border-radius: 60px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 20px auto;
+      max-width: 400px;
+    }
+    .password-input {
+      margin: 20px 0;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #007bff;
+      color: rgb(255, 255, 255);
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<h1>FOR LOVE ONE</h1>
+<div id="password-check">
+  <p>Please enter the (password) to view the card:</p>
+  <input type="password" id="password" class="password-input" placeholder="Enter password">
+  <button onclick="checkPassword()">Submit</button>
+  <p id="wrong-password" style="color: red;">Incorrect password. Please try again.</p>
+</div>
+
+<div id="card" class="card">
+  <h2> 💕 LOVE YOU 💕</h2>
+  <p>Happy 3 months to us! 💕 These past three months have been a beautiful journey of laughter, connection, and love. Every moment with you has been a reminder of how lucky I am to have you in my life.
+
+    Thank you for your kindness, your patience, and for being the incredible person that you are. I look forward to every memory we’ll create together as we continue this amazing adventure.
+    
+    Here’s to us and everything we’ve yet to experience.
+    
+    With love,</p>
+  <p>Keep shining and smiling! ✨</p>
+  <P> 💕 MI AMOR 💕</P>
+</div>
+
+<script>
+  function checkPassword() {
+    const passwordInput = document.getElementById('password').value;
+    const correctPassword = "201024"; 
+    if (passwordInput === correctPassword) {
+      document.getElementById('password-check').style.display = 'none';
+      document.getElementById('card').style.display = 'block';
+    } else {
+      document.getElementById('wrong-password').style.display = 'block';
+    }
+  }
+</script>
+<style>
+ 
+  @keyframes fadeIn {
+    from {
+      opacity:-100;
+      transform: scale(10);
+    }
+    to {
+      opacity:0.2,0.3,0.4,0.5 0.6,0.7,0.8,0.9,1.0;
+      transform: scale(0);
+    }
+  }
+
+  #card {
+    display: none;
+    animation: fadeIn 3s ease-out;
+  }
+  
+  
+</style>
+</body>
+</html>
